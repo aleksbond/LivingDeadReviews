@@ -13,6 +13,6 @@ end
 
 group :test, :development do
   gem 'rspec-rails', '2.10.1'
-  gem 'factory_girl', '3.5.0'
+  gem 'factory_girl_rails', '3.5.0'
 end
 
