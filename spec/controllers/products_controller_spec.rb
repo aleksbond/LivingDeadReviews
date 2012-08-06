@@ -8,7 +8,10 @@ describe ProductsController do
   end
 
   def valid_attributes
-    {}
+    {
+      :model_number => 96,
+      :name => "Super Axe Brain Smasher"
+    }
   end
   
   def valid_session
