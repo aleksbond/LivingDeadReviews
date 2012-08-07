@@ -60,14 +60,14 @@ describe ReviewsController do
       it "assigns a newly created but unsaved review as @review" do
         # Trigger the behavior that occurs when invalid params are submitted
         Review.any_instance.stub(:save).and_return(false)
-        post :create, {:review => {}, :product_id => @product.id.to_param}
+        post :create, {:review => {:comment => "Kill Zombies!"}, :product_id => @product.id.to_param}
         assigns(:review).should be_a_new(Review)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Review.any_instance.stub(:save).and_return(false)
-        post :create, {:review => {}, :product_id => @product.id.to_param}
+        post :create, {:review => {:comment => "Kill Zombies!"}, :product_id => @product.id.to_param}
         response.should render_template("new")
       end
     end

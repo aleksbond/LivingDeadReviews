@@ -31,6 +31,7 @@ class ReviewsController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     @review = @product.reviews.build(params[:review].merge(:user_id => current_user.id))
+    @review.comment = @review.strip_comment
 
     respond_to do |format|
       if @review.save

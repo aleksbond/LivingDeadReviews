@@ -16,4 +16,12 @@ describe Product do
       @product.active_reviews.should == []
     end
   end
+  
+  describe "#Average Rating" do
+    it "should return average rating for product" do
+      review1 = FactoryGirl.create(:review, :product_id => @product.id, :user_id => 1, :rating => 5)
+      review2 = FactoryGirl.create(:review, :product_id => @product.id, :user_id => 2, :rating => 2)
+      @product.average_rating.should == 3.5
+    end
+  end
 end

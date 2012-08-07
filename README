@@ -1,0 +1,25 @@
+Create a new site written in Ruby on Rails which does the following:
+
+Allows users to review products
+
+User should be able to specify the product model number
+
+User should be able to leave a star rating (1 to 5)
+
+User should be able to leave a text comment with their review
+
+User must leave their email address attached to review
+
+User can only review a specific product model once
+
+Add status column on reviews, validate that it can be 'active' or 'rejected' and it should default to 'active.'
+
+Add named_scope on the review model such that I can call Review.active or Product.first.reviews.active and get only active reviews.
+
+Add filter on the review model that uses a regex to filter out anything that looks like an HTML tag from the review comment field before saving to the database.  You don't need to account for every possible edge case, basic filtering is fine.
+
+Create a homepage which paginates all reviewed model numbers sorted by average rating (highest to lowest)
+
+For each product shown on the homepage display its model number and average star rating
+
+Unit and functional tests

@@ -8,4 +8,8 @@ class Product < ActiveRecord::Base
     reviews.find(:all, :conditions => { :status => "active"})
   end
   
+  def average_rating
+    reviews.collect(&:rating).sum.to_f/reviews.length if reviews.length > 0
+  end
+  
 end

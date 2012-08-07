@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120806032815) do
+ActiveRecord::Schema.define(:version => 20120807074052) do
 
   create_table "products", :force => true do |t|
     t.string   "name"
     t.integer  "model_number"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.float    "average_rating"
   end
 
   create_table "reviews", :force => true do |t|
@@ -30,6 +31,8 @@ ActiveRecord::Schema.define(:version => 20120806032815) do
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
   end
+
+  add_index "reviews", ["product_id", "user_id"], :name => "index_reviews_on_product_id_and_user_id", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

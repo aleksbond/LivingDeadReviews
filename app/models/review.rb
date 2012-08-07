@@ -5,4 +5,10 @@ class Review < ActiveRecord::Base
   validates :rating, :presence => true
   validates :comment, :presence => true
   validates :user_email, :presence => true
+  validates_uniqueness_of :product_id, :scope => :user_id, :message => "has already been reviewed"
+  validates :rating, :numericality => { :greater_than => 0, :less_than_or_equal_to => 5}
+  
+  def strip_comment
+    comment.gsub(%r{</?[^>]+?>}, '')
+  end
 end
