@@ -23,3 +23,11 @@ Create a homepage which paginates all reviewed model numbers sorted by average r
 For each product shown on the homepage display its model number and average star rating
 
 Unit and functional tests
+
+Notes:
+
+-Reviews contain the comment and the rating, you can't leave a rating without a comment.
+-Users can create Product Listings where they can specify the model number.
+-named_scope is not in Rails 3 so I just used class methods, You can get active reviews by calling product.active_reviews.
+-To make sure that users can only leave one review per item, I added a unique index to the Reviews table that consist of the product_id and user_id.
+  If a user can only leave one review per item then this combination of ids should always be unique.

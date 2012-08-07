@@ -10,7 +10,7 @@
   <div id="user_nav">
     <ul>
       <li>
-        <%= link_to "Home", home_index_path%>
+        <%= link_to "Home", home_index_path%> |
       </li>
       <li>
         <% if user_signed_in? %>
@@ -22,7 +22,7 @@
       </li>
       <% if user_signed_in? %>
         <li>
-            <%= link_to "Create Product Listing", new_product_path %>
+            | <%= link_to "Create Product Listing", new_product_path %>
         </li>
       <% end %>
     </ul>
