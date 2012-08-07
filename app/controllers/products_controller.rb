@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
-    @products = @products.sort_by(&:average_rating).reverse
+    @products = @products.sort_by{|product| product.average_rating.nil? ?  0.0 : product.average_rating}.reverse
 
     respond_to do |format|
       format.html # index.html.erb

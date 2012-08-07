@@ -31,3 +31,5 @@ Notes:
 -named_scope is not in Rails 3 so I just used class methods, You can get active reviews by calling product.active_reviews.
 -To make sure that users can only leave one review per item, I added a unique index to the Reviews table that consist of the product_id and user_id.
   If a user can only leave one review per item then this combination of ids should always be unique.
+-I created an acceptance test suite using a Rails gem called Steak, it uses RSpec and Capybara and to run it 
+  separately you can call rake spec:acceptance in the terminal( all the tests will run when you cal rake spec) 

@@ -14,5 +14,7 @@ end
 group :test, :development do
   gem 'rspec-rails', '2.10.1'
   gem 'factory_girl_rails', '3.5.0'
+  gem 'steak', '2.0.0'
+  gem 'database_cleaner', '0.8.0'
 end
 

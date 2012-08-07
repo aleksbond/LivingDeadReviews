@@ -12,6 +12,11 @@
       <li>
         <%= link_to "Home", home_index_path%> |
       </li>
+      <% if user_signed_in? %>
+        <li>
+            <%= link_to "Create Product Listing", new_product_path %> |
+        </li>
+      <% end %>
       <li>
         <% if user_signed_in? %>
           Signed in as <%= current_user.email %>. Not you?
@@ -20,11 +25,6 @@
           <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
         <% end %>
       </li>
-      <% if user_signed_in? %>
-        <li>
-            | <%= link_to "Create Product Listing", new_product_path %>
-        </li>
-      <% end %>
     </ul>
   </div>
 
