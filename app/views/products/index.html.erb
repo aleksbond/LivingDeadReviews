@@ -14,7 +14,8 @@
     <td><%= product.name %></td>
     <td><%= product.model_number %></td>
     <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Write Review', new_review_path(:product_id => product.id) %></td>
+    <td><%= link_to 'Write Review', new_product_review_path(:product_id => product.id) %></td>
+    <td><%= link_to 'View Reviews', product_reviews_path(:product_id => product.id)%></td>
   </tr>
 <% end %>
 </table>
