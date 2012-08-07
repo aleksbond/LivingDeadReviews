@@ -25,11 +25,12 @@ For each product shown on the homepage display its model number and average star
 Unit and functional tests
 
 Notes:
-
+-There is seeded data so make sure to run rake db:seed.
+-I have developed mostly every feature in this list according to my assumptions(I didn't get around to the pagination, I think that's about it).
 -Reviews contain the comment and the rating, you can't leave a rating without a comment.
 -Users can create Product Listings where they can specify the model number.
 -named_scope is not in Rails 3 so I just used class methods, You can get active reviews by calling product.active_reviews.
 -To make sure that users can only leave one review per item, I added a unique index to the Reviews table that consist of the product_id and user_id.
   If a user can only leave one review per item then this combination of ids should always be unique.
 -I created an acceptance test suite using a Rails gem called Steak, it uses RSpec and Capybara and to run it 
-  separately you can call rake spec:acceptance in the terminal( all the tests will run when you cal rake spec) 
+  separately you can call rake spec:acceptance in the terminal( all the tests will run when you call rake spec) 
